@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<title>LocateMap - Геокодер и автоматическое определения адреса с выбором на яндекс карте</title>
+<!-- <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700&display=swap" rel="stylesheet" /> -->
+<link rel="stylesheet" href="css/main.min.css">
+
+</head>
+<body>
+
+<div class="container-xxl ">
+    <div class="sidebar-fixed">
+        <div class="elements-nav mt-4 mb-4" style="text-align: center">
+            <a title="Интернет-магазин светильников и люстр Fandeco. Fandeco.ru" href="index.html" class="elem elem_logo">
+                <img src="images/logo.png" class="mobile" alt=""><br>
+                <span class="m-2">LocateMap - компонент Modx</span>
+            </a>
+        </div>
+
+        <div class="sidebar-content">
+            <ul class="nav flex-column">
+    <li class="nav-item">
+        <a class="nav-link active" href="#description">Описание</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link " href="#functions-faststart">Быстрый старт</a>
+
+        <ul class="nav flex-column menu_level_2" >
+            <li class="nav-item"><a class="nav-link " href="#functions-token_dadata">Token DaData</a></li>
+        </ul>
+        <ul class="nav flex-column menu_level_2" >
+            <li class="nav-item"><a class="nav-link " href="#functions-token_yandex">Token yandex</a></li>
+        </ul>
+
+    </li>
+    <li class="nav-item">
+        <a class="nav-link " href="#functions-desktop">Desktop</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link " href="#functions-mobile">Mobile</a>
+    </li>
+
+
+    <li class="nav-item">
+        <a class="nav-link " href="#functions-geocoder">Геокодыры</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link " href="#functions-plugins">Плагины</a>
+    </li>
+
+
+    <li class="nav-item">
+        <a class="nav-link " href="#functions-event">События</a>
+
+        <ul class="nav flex-column menu_level_2" >
+            <li class="nav-item">
+                <a class="nav-link " href="#functions-event-js">- События JS</a>
+
+               <!-- <ul class="nav flex-column menu_level_3" >
+                    <li class="nav-item"><a class="nav-link " href="#locatemap_get_address">locatemap_get_address</a></li>
+                    <li class="nav-item"><a class="nav-link " href="#locatemap_save_address">locatemap_save_address</a></li>
+                    <li class="nav-item"><a class="nav-link " href="#locatemap_popap_show">locatemap_popap_show</a></li>
+                    <li class="nav-item"><a class="nav-link " href="#locatemap_popap_hide">locatemap_popap_hide</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#пример-js">Пример</a>
+                    </li>
+                </ul>-->
+
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="#functions-event-php">- События PHP</a>
+               <!-- <ul class="nav flex-column menu_level_3" >
+                    <li class="nav-item">
+                        <a class="nav-link " href="#locatemapbeforesaveaddress">LocateMapBeforeSaveAddress</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#locatemapaftersaveaddress">LocateMapAfterSaveAddress</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#locatemapbeforegeocoder">LocateMapBeforeGeoCoder</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#locatemapaftergeocoder">LocateMapAfterGeoCoder</a>
+                    </li>
+                </ul>-->
+            </li>
+
+        </ul>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link " href="#buy">Купить</a>
+    </li>
+</ul>
+
+        </div>
+    </div>
+
+    <div class=" content">
+        <div class="content-wrapper">
+            <div class="elements-block" id="description">
+                <h2 id="описание">Описание</h2>
+<p>Компонент автоматически определяет координаты пользователя по API браузера и если координаты не определены то получает координаты из сервиса DaData</p>
+<h3 id="карта-в-модельном-окне">Карта в модельном окне</h3>
+<p>Поиск адреса с помощью Yandex карты</p>
+<div class="macbook_screen_comp">
+    <div class="macbook_screen_bg">
+        <img src="images/locatemap/modal2.png" class="macbook_screen_desktop" alt="">
+    </div>
+</div>
+
+            </div>
+
+            <!-- Возможности-->
+            <div class="elements-block" id="functions-desktop">
+                <div class="row">
+                    <h2 id="desktop-версия">Desktop версия</h2>
+<div class="functions_block col-6">
+    <h5>Попап с вопросом "Ваш адрес"</h5>
+    <div class="functions_text">При первом входе адрес определяется автоматически и предлагает пользователю подтвердить свой адрес или выбрать другой</div>
+    <div class="functions_img">
+        <a href="images/locatemap/elements/ques.png" data-fancybox="functions">
+            <img src="images/locatemap/elements/ques.png" alt="">
+        </a>
+    </div>
+</div>
+
+
+<div class="functions_block col-6">
+    <h5>Определить местоположение</h5>
+    <div class="functions_text">Определенить на карте место положение пользовател через API браузера</div>
+    <div class="functions_img">
+        <a href="images/locatemap/elements/detected_desktop.png" data-fancybox="functions">
+            <img src="images/locatemap/elements/detected_desktop.png" alt="">
+        </a>
+    </div>
+</div>
+
+
+<!-- Управление большим объемом товаров -->
+<div class="functions_block col-6">
+    <h5>Найти адрес с помощью подсказок</h5>
+    <div class="functions_text">Вводите адрес в ручную и с помощью подсказок находите свой адрес</div>
+    <div class="functions_img">
+        <a href="images/locatemap/elements/hint_desktop.png" data-fancybox="functions">
+            <img src="images/locatemap/elements/hint_desktop.png" alt="">
+        </a>
+    </div>
+</div>
+
+<!-- Управление большим объемом товаров -->
+<div class="functions_block col-6">
+    <h5>Передвижение по карте</h5>
+    <div class="functions_text">Перетаскивайте карту и при наведении на здание получайте адрес</div>
+    <div class="functions_img">
+        <a href="images/locatemap/elements/pin.png" data-fancybox="functions">
+            <img src="images/locatemap/elements/pin.png" alt="">
+        </a>
+    </div>
+</div>
+
+
+<!-- Управление большим объемом товаров -->
+<div class="functions_block col-6">
+    <h5>Zoom по карте</h5>
+    <div class="functions_text">Увеличивайте и уменьшайте карту без потери выбранной точки</div>
+    <div class="functions_img">
+        <a href="images/locatemap/elements/zoom.png" data-fancybox="functions">
+            <img src="images/locatemap/elements/zoom.png" alt="">
+        </a>
+    </div>
+</div>
+
+
+<div class="functions_block col-6">
+    <h5>Спиннер</h5>
+    <div class="functions_text">Пока загружаются скрипты, пользователь видит крутящийся спиннер</div>
+    <div class="functions_img">
+        <a href="images/locatemap/elements/spinner.png" data-fancybox="functions">
+            <img src="images/locatemap/elements/spinner.png" alt="">
+        </a>
+    </div>
+</div>
+<div class="functions_block col-6">
+    <h5>Оптимизированная загрузка</h5>
+    <div class="functions_text">Все скрипты вместе с картой грузятся только по нажатию на показать карту.</div>
+    <div class="functions_img">
+        <a href="images/locatemap/elements/mobile/script.png" data-fancybox="functions">
+            <img src="images/locatemap/elements/mobile/script.png" alt="">
+        </a>
+    </div>
+</div>
+
+                </div>
+            </div>
+
+            <!-- Mobile-->
+            <div class="elements-block" id="functions-mobile">
+                <div class="row">
+                    <h2 id="mobile-версия">Mobile версия</h2>
+<div class="functions_block col-6">
+    <h5>Индивидуальный дизайн для мобильной версии</h5>
+    <div class="functions_text">Адаптация карты для мобильных устройств</div>
+    <div class="functions_img">
+        <a href="images/locatemap/elements/mobile/mobile.png" data-fancybox="functions">
+            <img src="images/locatemap/elements/mobile/mobile.png" alt="">
+        </a>
+    </div>
+</div>
+
+
+<div class="functions_block col-6">
+    <h5>Поиск по словам</h5>
+    <div class="functions_text">Ищет адрес через сервис DaData</div>
+    <div class="functions_img">
+        <a href="images/locatemap/elements/mobile/hint.png" data-fancybox="functions">
+            <img src="images/locatemap/elements/mobile/hint.png" alt="">
+        </a>
+    </div>
+</div>
+
+
+<div class="functions_block col-6">
+    <h5>Оптимизированная загрузка</h5>
+    <div class="functions_text">Все скрипты js вместе с картой грузятся только по нажатию на показать карту</div>
+    <div class="functions_img">
+        <a href="images/locatemap/elements/mobile/script.png" data-fancybox="functions">
+            <img src="images/locatemap/elements/mobile/script.png" alt="">
+        </a>
+    </div>
+</div>
+
+
+
+<!-- Управление большим объемом товаров -->
+<div class="functions_block col-6">
+    <h5>Zoom по карте</h5>
+    <div class="functions_text">Увеличивайте и уменьшайте карту без потери выбранной точки</div>
+    <div class="functions_img">
+        <a href="images/locatemap/elements/zoom.png" data-fancybox="functions">
+            <img src="images/locatemap/elements/zoom.png" alt="">
+        </a>
+    </div>
+</div>
+
+                </div>
+            </div>
+
+
+            <div class="elements-block" id="functions-faststart">
+                <div class="row">
+                    <h2 id="быстрый-старт">Быстрый старт</h2>
+<p>Для быстрого старта нужно установить компонент и выполнить 3 шага</p>
+<h5 id="1---получить-токена-для-dadata">1 - Получить токена для DaData</h5>
+<p>С помощью инструкции <a href="#functions-token_dadata">получить токен</a></p>
+<h5 id="2---записать-токен-в-настройках">2 - Записать токен в настройках</h5>
+<p>Зайти в системные настройки modx, выбрать namespace locatemap и в настройке с ключем <strong>locatemap_token_dadata</strong> указать токен из личного кабинета</p>
+ <a href="images/manual.png" data-fancybox="all">
+    <img src="images/manual.png" alt="" style="margin-bottom:30px;max-width: 250px;">
+</a>
+
+<h5 id="3-добавить-сниппет-на-сайт">3 Добавить сниппет на сайт</h5>
+<p>В любом месте сайт вызовите сниппет для запуска модельного окна</p>
+<pre><code class="language-html">[[!LocateMap]]
+
+&lt;!--Выведет--&gt;
+&lt;ul class=&quot;navbar-nav mr-auto  &quot;&gt;
+    &lt;li class=&quot;nav-item dropdown&quot;&gt;
+        &lt;a class=&quot;dropdown-item locatemap_my_address locatemapBtnModal &quot; href=&quot;#&quot;&gt;
+            &lt;svg width=&quot;11&quot; height=&quot;15&quot; viewBox=&quot;0 0 11 15&quot; fill=&quot;none&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+                &lt;path d=&quot;M5.20525 0C2.33504 0 0 2.33538 0 5.20567C0 7.96856 4.72282 14.4237 4.92391 14.697L5.11159 14.9524C5.13353 14.9824 5.16848 15 5.20525 15C5.24259 15 5.27731 14.9824 5.29949 14.9524L5.48705 14.697C5.68826 14.4237 10.411 7.96856 10.411 5.20567C10.411 2.33538 8.07554 0 5.20525 0ZM5.20525 3.34101C6.23366 3.34101 7.06991 4.1773 7.06991 5.20567C7.06991 6.2335 6.23362 7.07033 5.20525 7.07033C4.17745 7.07033 3.34059 6.2335 3.34059 5.20567C3.34059 4.1773 4.17742 3.34101 5.20525 3.34101Z&quot;
+                      fill=&quot;white&quot;/&gt;
+            &lt;/svg&gt;
+            &lt;span class=&quot;locatemap_my_address_text&quot; title=&quot;{$name}&quot;&gt;{if $known}{$name}{else}Укажите адрес доставки{/if}&lt;/span&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<p>Или можно использовать класс для запуска</p>
+<pre><code class="language-html">&lt;button class=&quot;locatemapBtnModal&quot;&gt;Показать карту&lt;/button&gt;
+</code></pre>
+
+                </div>
+            </div>
+
+
+            <div class="elements-block" id="functions-token_dadata">
+                <div class="row">
+                    <h4 id="token-dadata">Token DaData</h4>
+<p><img src="../images/provider/dadata.png" alt=""></p>
+<p><em><strong>Обязательно нужно получить токен</strong></em></p>
+<p>Токен для DaData имеет ограничения в <strong>10 000</strong> запросов в сутки.</p>
+<p>Получить токен можно в <a href="https://dadata.ru/profile/#info">личном кабинете</a></p>
+<p><a href="https://support.dadata.ru/ru/knowledge-bases/4/articles/2155-kak-poluchit-api-klyuch">Инструкция по получению</a></p>
+
+                </div>
+            </div>
+
+
+            <div class="elements-block" id="functions-token_yandex">
+                <div class="row">
+                    <h4 id="token-yandex">Token Yandex</h4>
+<p><img src="../images/provider/yandex.png" alt="">
+<em>Получение токена для Yandex необязательно</em> </p>
+<p>Токен нужен для использования <a href="https://yandex.ru/dev/maps/geocoder/">геокодера яндекс</a> он лучше всех из 3-х кодеров определят точность адреса!
+Но при этом имеет ограничения в <strong>1000 запросов</strong> в сутки.</p>
+<h4 id="инструкция-по-получению-токена">Инструкция по получению токена</h4>
+<p>Для получения зайдите в <a href="https://developer.tech.yandex.ru/services/">личный кабинет yandex</a> и с помощью <a href="https://www.youtube.com/watch?v=HlHWwCA53yY">инструкции</a> получить токен.</p>
+
+                </div>
+            </div>
+
+            <div class="elements-block" id="functions-geocoder">
+                <div class="row">
+                    <h2 id="геокодыры">Геокодыры</h2>
+<p>Компоненте имеет по умолчанию 3 геокодера</p>
+<ul>
+<li><a href="https://nominatim.org">Nominatim</a> - бесплатный сервис</li>
+<li><a href="https://dadata.ru/api/suggest/address/">DaData</a> - условно бесплатный (ограничения в 10 000)</li>
+<li><a href="https://yandex.ru/dev/maps/geocoder/">Yandex</a> - условно бесплатны (ограничения в 1 000 запрос на один токен)</li>
+</ul>
+
+                </div>
+            </div>
+
+
+            <div class="elements-block" id="functions-plugins">
+                <div class="row">
+                    <h2 id="плагины">Плагины</h2>
+<p>По умолчанию в систему добавлено два плагина</p>
+<h5 id="locatemap">LocateMap</h5>
+<p>Основной плагин для регистрации скриптов</p>
+<h5 id="locatemapaddressminishop">locatemapAddressMiniShop</h5>
+<p>Плагин записывает адрес после сохранения.</p>
+<p><em>Логику работы можно посмотреть на событии <a href="#locatemapaftersaveaddress">LocateMapAfterSaveAddress</a></em></p>
+
+                </div>
+            </div>
+
+
+
+            <div id="functions-event"></div>
+            <div class="elements-block" id="functions-event-js">
+                <div class="row">
+                    <h1 id="события-js">События js</h1>
+<p>После некоторый действий срабатывают js события</p>
+<ul>
+<li><strong>locatemap_get_address</strong> - срабатывает после получения адреса из геокодер</li>
+<li><strong>locatemap_save_address</strong> - срабатывает после сохранения адреса</li>
+<li><strong>locatemap_popap_show</strong> - после открытия модульнего окна</li>
+<li><strong>locatemap_popap_hide</strong> - после закрытия модульнего окна</li>
+</ul>
+<h4 id="locatemap_get_address">locatemap_get_address</h4>
+<p>Срабатывает после получения адреса из геокодер</p>
+<h4 id="locatemap_save_address">locatemap_save_address</h4>
+<p>Срабатывает после сохранения адреса</p>
+<h4 id="locatemap_popap_show">locatemap_popap_show</h4>
+<p>После <strong>закрытия</strong> модельного окна</p>
+<h4 id="locatemap_popap_hide">locatemap_popap_hide</h4>
+<p>После <strong>закрытия</strong> модельного окна</p>
+<h4 id="пример-js">Пример JS</h4>
+<hr>
+<pre><code class="language-js">// пример подписки на js события
+$(document).on(&#39;locatemap_save_address&#39;, function (e, res) {
+    if (res.success) {
+        console.log(res.data) // тут будет адрес пользователя который сохранили в сессии
+    }
+})
+</code></pre>
+
+                </div>
+            </div>
+
+
+            <div class="elements-block" id="functions-event-php">
+                <div class="row">
+                    <h1 id="события-php">События PHP</h1>
+<p>События работают через плагины modx и на них можно подписываться</p>
+<h5 id="locatemapbeforesaveaddress">LocateMapBeforeSaveAddress</h5>
+<p>Событие срабатывает <strong>перед</strong> сохранением адреса</p>
+<pre><code class="language-php">&lt;?php
+
+// Event:LocateMapBeforeSaveAddress
+// Комментарий: Заполняем форму для заказа miniShop2
+/** @var modX $modx */
+/* @var array $scriptProperties */
+/* @var \LocateMap\Address $address */
+
+// Получаем улицу
+$street = $address-&gt;street()
+
+// и записываем новое название
+$address-&gt;setName(&#39;Тут новое название &#39;.$street)
+</code></pre>
+<h5 id="locatemapaftersaveaddress">LocateMapAfterSaveAddress</h5>
+<p>После сохранения адрес можно записать наш новый адрес в заказ minishop</p>
+<pre><code class="language-php">&lt;?php
+
+// Event:LocateMapAfterSaveAddress
+// Комментарий: Заполняем форму для заказа miniShop2
+/** @var modX $modx */
+/* @var array $scriptProperties */
+/* @var \LocateMap\Address $address */
+
+/* @var miniShop2 $miniShop2 */
+$miniShop2 = $modx-&gt;getService(&#39;miniShop2&#39;);
+if ($miniShop2-&gt;loadServices()) {
+
+    if ($index = $address-&gt;get(&#39;postal_code&#39;)) {
+        $miniShop2-&gt;order-&gt;add(&#39;index&#39;, $index);
+    }
+
+    if ($region = $address-&gt;get(&#39;region&#39;)) {
+        $miniShop2-&gt;order-&gt;add(&#39;region&#39;, $region);
+    }
+
+    if ($city = $address-&gt;get(&#39;city&#39;)) {
+        $miniShop2-&gt;order-&gt;add(&#39;city&#39;, $city);
+    }
+
+    if ($house = $address-&gt;get(&#39;house&#39;)) {
+        $miniShop2-&gt;order-&gt;add(&#39;building&#39;, $house);
+    }
+
+    if ($street = $address-&gt;get(&#39;street&#39;)) {
+        $miniShop2-&gt;order-&gt;add(&#39;street&#39;, $street);
+    }
+}
+</code></pre>
+<h5 id="locatemapbeforegeocoder">LocateMapBeforeGeoCoder</h5>
+<p>Срабатывает <strong>перед</strong> получением адреса </p>
+<pre><code class="language-php">
+/* @var string $service  Гео кодер через который будет производиться поиск адреса*/
+/* @var string $lat  широта */
+/* @var string $lon  долгота */
+
+// Подменить геокодр по умолчанию на новый
+// В системе доступны 3 кодера Nominatim DaData Yandex
+$this-&gt;modx-&gt;event-&gt;returnedValues[&#39;service&#39;] = &#39;Yandex&#39;;
+</code></pre>
+<h5 id="locatemapaftergeocoder">LocateMapAfterGeoCoder</h5>
+<p>Срабатывает <strong>после</strong> получением адреса</p>
+<pre><code class="language-php">
+/* @var LocateMap\Address $address */
+
+// Получаем улицу
+$street = $address-&gt;street()
+
+// и записываем новое название
+$address-&gt;setName(&#39;Тут новое название &#39;.$street)
+
+// Пользователю вернется новое название, котором затем можно сохранить в сессию
+</code></pre>
+
+                </div>
+            </div>
+
+
+            <!-- Купить -->
+            <div class="elements-block" id="buy">
+                <h2>Купить</h2>
+                <p>Цена <b>4500</b> руб.</p>
+                <p>Продажа и поддержка компонента осуществляется через маркетплейс <b>modstore.pro</b></p>
+                <a class="btn btn-success" target="_blank" href="https://modstore.pro/packages/maps/locatemap">Перейти на маркетплейс</a>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+
+
+
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+
+<script src="js/main.js"></script>
+</body>
+</html>
+
