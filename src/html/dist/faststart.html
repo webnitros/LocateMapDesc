@@ -1,0 +1,30 @@
+<h2 id="быстрый-старт">Быстрый старт</h2>
+<p>Для быстрого старта нужно установить компонент и выполнить 3 шага</p>
+<h5 id="1---получить-токена-для-dadata">1 - Получить токена для DaData</h5>
+<p>С помощью инструкции <a href="#functions-token_dadata">получить токен</a></p>
+<h5 id="2---записать-токен-в-настройках">2 - Записать токен в настройках</h5>
+<p>Зайти в системные настройки modx, выбрать namespace locatemap и в настройке с ключем <strong>locatemap_token_dadata</strong> указать токен из личного кабинета</p>
+ <a href="images/manual.png" data-fancybox="all">
+    <img src="images/manual.png" alt="" style="margin-bottom:30px;max-width: 250px;">
+</a>
+
+<h5 id="3-добавить-сниппет-на-сайт">3 Добавить сниппет на сайт</h5>
+<p>В любом месте сайт вызовите сниппет для запуска модельного окна</p>
+<pre><code class="language-html">[[!LocateMap]]
+
+&lt;!--Выведет--&gt;
+&lt;ul class=&quot;navbar-nav mr-auto  &quot;&gt;
+    &lt;li class=&quot;nav-item dropdown&quot;&gt;
+        &lt;a class=&quot;dropdown-item locatemap_my_address locatemapBtnModal &quot; href=&quot;#&quot;&gt;
+            &lt;svg width=&quot;11&quot; height=&quot;15&quot; viewBox=&quot;0 0 11 15&quot; fill=&quot;none&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+                &lt;path d=&quot;M5.20525 0C2.33504 0 0 2.33538 0 5.20567C0 7.96856 4.72282 14.4237 4.92391 14.697L5.11159 14.9524C5.13353 14.9824 5.16848 15 5.20525 15C5.24259 15 5.27731 14.9824 5.29949 14.9524L5.48705 14.697C5.68826 14.4237 10.411 7.96856 10.411 5.20567C10.411 2.33538 8.07554 0 5.20525 0ZM5.20525 3.34101C6.23366 3.34101 7.06991 4.1773 7.06991 5.20567C7.06991 6.2335 6.23362 7.07033 5.20525 7.07033C4.17745 7.07033 3.34059 6.2335 3.34059 5.20567C3.34059 4.1773 4.17742 3.34101 5.20525 3.34101Z&quot;
+                      fill=&quot;white&quot;/&gt;
+            &lt;/svg&gt;
+            &lt;span class=&quot;locatemap_my_address_text&quot; title=&quot;{$name}&quot;&gt;{if $known}{$name}{else}Укажите адрес доставки{/if}&lt;/span&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<p>Или можно использовать класс для запуска</p>
+<pre><code class="language-html">&lt;button class=&quot;locatemapBtnModal&quot;&gt;Показать карту&lt;/button&gt;
+</code></pre>

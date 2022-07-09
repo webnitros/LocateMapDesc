@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LocateMap - Геокодер и автоматическое определения адреса с выбором на яндекс карте</title>
+
+    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700&display=swap" rel="stylesheet" /> -->
+    <link rel="stylesheet" href="css/bootstrap.css?v=1">
+    <link rel="stylesheet" href="css/main.css?v=1">
+</head>
+<body>
+
+<div class="container-xxl ">
+    <div class="sidebar-fixed">
+        <div class="elements-nav mt-4 mb-4" style="text-align: center">
+            <a title="Интернет-магазин светильников и люстр Fandeco. Fandeco.ru" href="index.html" class="elem elem_logo">
+                <img src="images/logo.png" class="mobile" alt=""><br>
+                <span class="m-2">LocateMap - компонент Modx</span>
+            </a>
+        </div>
+
+        <div class="sidebar-content">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#desc">Описание</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#functions-desktop">Desktop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#functions-mobile">Mobile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#functions-event">События</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#functions-all">Ещё</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#buy">Купить</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class=" content">
+        <div class="content-wrapper">
+
+            <!-- Описание -->
+            <div class="elements-block" id="desc">
+
+                <h2>Описание</h2>
+                <p>Компонент автоматически определяет координаты пользователя по API браузера и если координаты не определены то получает координаты из сервиса DaData</p>
+
+                <div class="macbook_screen">
+                    <h4>Карта в модельном окне</h4>
+                    <p>Поиск адреса с помощью Yandex карты</p>
+                    <div class="macbook_screen_comp">
+                        <div class="macbook_screen_bg">
+                            <img src="images/locatemap/modal2.png" class="macbook_screen_desktop" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Возможности-->
+            <div class="elements-block" id="functions-desktop">
+                <div class="row">
+                    <h2>Desktop версия</h2>
+
+                    <!-- Управление большим объемом товаров -->
+                    <div class="functions_block col-6">
+                        <h5>Определить местоположение</h5>
+                        <div class="functions_text">Определенить на карте место положение пользовател через API браузера</div>
+                        <div class="functions_img">
+                            <a href="images/locatemap/elements/detected_desktop.png" data-fancybox="functions">
+                                <img src="images/locatemap/elements/detected_desktop.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <!-- Управление большим объемом товаров -->
+                    <div class="functions_block col-6">
+                        <h5>Найти адрес с помощью подсказок</h5>
+                        <div class="functions_text">Вводите адрес в ручную и с помощью подсказок находите свой адрес</div>
+                        <div class="functions_img">
+                            <a href="images/locatemap/elements/hint_desktop.png" data-fancybox="functions">
+                                <img src="images/locatemap/elements/hint_desktop.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Управление большим объемом товаров -->
+                    <div class="functions_block col-6">
+                        <h5>Передвижение по карте</h5>
+                        <div class="functions_text">Перетаскивайте карту и при наведении на здание получайте адрес</div>
+                        <div class="functions_img">
+                            <a href="images/locatemap/elements/pin.png" data-fancybox="functions">
+                                <img src="images/locatemap/elements/pin.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <!-- Управление большим объемом товаров -->
+                    <div class="functions_block col-6">
+                        <h5>Zoom по карте</h5>
+                        <div class="functions_text">Увеличивайте и уменьшайте карту без потери выбранной точки</div>
+                        <div class="functions_img">
+                            <a href="images/locatemap/elements/zoom.png" data-fancybox="functions">
+                                <img src="images/locatemap/elements/zoom.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Mobile-->
+            <div class="elements-block" id="functions-mobile">
+                <div class="row">
+                    <h2>Mobile версия</h2>
+
+                    <!-- Управление большим объемом товаров -->
+                    <div class="functions_block col-6">
+                        <h5>Индивидуальный дизайн для мобильной версии</h5>
+                        <div class="functions_text">Адаптация карты для мобильных устройств</div>
+                        <div class="functions_img">
+                            <a href="images/locatemap/elements/mobile/mobile.png" data-fancybox="functions">
+                                <img src="images/locatemap/elements/mobile/mobile.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <!-- Управление большим объемом товаров -->
+                    <div class="functions_block col-6">
+                        <h5>Поиск по словам</h5>
+                        <div class="functions_text">Ищет адрес через сервис DaData</div>
+                        <div class="functions_img">
+                            <a href="images/locatemap/elements/mobile/hint.png" data-fancybox="functions">
+                                <img src="images/locatemap/elements/mobile/hint.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <!-- Управление большим объемом товаров -->
+                    <div class="functions_block col-6">
+                        <h5>Оптимизированная загрузка</h5>
+                        <div class="functions_text">Все скрипты js вместе с картой грузятся только по нажатию на показать карту</div>
+                        <div class="functions_img">
+                            <a href="images/locatemap/elements/mobile/script.png" data-fancybox="functions">
+                                <img src="images/locatemap/elements/mobile/script.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- Другие -->
+            <div class="elements-block" id="functions-all">
+                <div class="row">
+                    <h2>Другие возможности</h2>
+
+                    <!-- Управление большим объемом товаров -->
+                    <div class="functions_block col-6">
+                        <h5>Спиннер</h5>
+                        <div class="functions_text">Пока загружаются скрипты, пользователь видит крутящийся спиннер</div>
+                        <div class="functions_img">
+                            <a href="images/locatemap/elements/spinner.png" data-fancybox="functions">
+                                <img src="images/locatemap/elements/spinner.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Управление большим объемом товаров -->
+                    <div class="functions_block col-6">
+                        <h5>Оптимизированная загрузка</h5>
+                        <div class="functions_text">Все скрипты вместе с картой грузятся только по нажатию на показать карту.</div>
+                        <div class="functions_img">
+                            <a href="images/locatemap/elements/mobile/script.png" data-fancybox="functions">
+                                <img src="images/locatemap/elements/mobile/script.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="functions_block col-6">
+                        <h5>Попап с вопросом "Ваш адрес"</h5>
+                        <div class="functions_text">При первом входе адрес определяется автоматически и предлагает пользователю подтвердить свой адрес или выбрать другой</div>
+                        <div class="functions_img">
+                            <a href="images/locatemap/elements/ques.png" data-fancybox="functions">
+                                <img src="images/locatemap/elements/ques.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <!-- Другие -->
+            <div class="elements-block" id="functions-event-js">
+                <div class="row">
+                    <h2>События js</h2>
+
+                    <div>
+                    После некоторый действий срабатывают js события
+
+                    <ul style="margin-left: 20px">
+                        <li><b>locatemap_get_address</b> - срабатывает после получения адреса из геокодера</li>
+                        <li><b>locatemap_save_address</b> - срабатывает после сохранения адреса</li>
+                        <li><b>locatemap_save_address</b> - срабатывает после сохранения адреса</li>
+                        <li><b>locatemap_popap_show</b> - после открытия модульнего окна</li>
+                        <li><b>locatemap_popap_hide</b> - после закрытия модульнего окна</li>
+                    </ul>
+
+
+                    <p><em>пример подписки на js события</em></p>
+                    <code>
+                        $(document).on('locatemap_save_address', function (e, res) {<br>
+                        &nbsp;&nbsp;if (res.success) {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(res.data) // тут будет адрес пользователя который сохранили в сессии<br>
+                        &nbsp;&nbsp;}<br>
+                        })<br>
+                    </code>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <!-- Другие -->
+            <div class="elements-block" id="functions-event-php">
+                <div class="row">
+                    <h2>События Modx</h2>
+                    <p>Для плагинов событий </p>
+                    <ul style="margin-left: 20px">
+                        <li><b>LocateMapBeforeSaveAddress</b> - в переменной $address собержиться объект адреса</li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <!-- Купить -->
+            <div class="elements-block" id="buy">
+                <h2>Купить</h2>
+                <p>Цена <b>4500</b> руб.</p>
+                <p>Продажа и поддержка компонента осуществляется через маркетплейс <b>modstore.pro</b></p>
+                <a class="btn btn-success" target="_blank" href="https://modstore.pro/packages/maps/locatemap">Перейти на маркетплейс</a>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/main.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"/>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+</body>
+</html>

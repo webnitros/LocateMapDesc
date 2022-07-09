@@ -1,0 +1,25 @@
+<h1 id="события-js">События js</h1>
+<p>После некоторый действий срабатывают js события</p>
+<ul>
+<li><strong>locatemap_get_address</strong> - срабатывает после получения адреса из геокодер</li>
+<li><strong>locatemap_save_address</strong> - срабатывает после сохранения адреса</li>
+<li><strong>locatemap_popap_show</strong> - после открытия модульнего окна</li>
+<li><strong>locatemap_popap_hide</strong> - после закрытия модульнего окна</li>
+</ul>
+<h4 id="locatemap_get_address">locatemap_get_address</h4>
+<p>Срабатывает после получения адреса из геокодер</p>
+<h4 id="locatemap_save_address">locatemap_save_address</h4>
+<p>Срабатывает после сохранения адреса</p>
+<h4 id="locatemap_popap_show">locatemap_popap_show</h4>
+<p>После <strong>закрытия</strong> модельного окна</p>
+<h4 id="locatemap_popap_hide">locatemap_popap_hide</h4>
+<p>После <strong>закрытия</strong> модельного окна</p>
+<h4 id="пример-js">Пример JS</h4>
+<hr>
+<pre><code class="language-js">// пример подписки на js события
+$(document).on(&#39;locatemap_save_address&#39;, function (e, res) {
+    if (res.success) {
+        console.log(res.data) // тут будет адрес пользователя который сохранили в сессии
+    }
+})
+</code></pre>

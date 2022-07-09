@@ -1,0 +1,77 @@
+<h1 id="события-php">События PHP</h1>
+<p>События работают через плагины modx и на них можно подписываться</p>
+<h5 id="locatemapbeforesaveaddress">LocateMapBeforeSaveAddress</h5>
+<p>Событие срабатывает <strong>перед</strong> сохранением адреса</p>
+<pre><code class="language-php">&lt;?php
+
+// Event:LocateMapBeforeSaveAddress
+// Комментарий: Заполняем форму для заказа miniShop2
+/** @var modX $modx */
+/* @var array $scriptProperties */
+/* @var \LocateMap\Address $address */
+
+// Получаем улицу
+$street = $address-&gt;street()
+
+// и записываем новое название
+$address-&gt;setName(&#39;Тут новое название &#39;.$street)
+</code></pre>
+<h5 id="locatemapaftersaveaddress">LocateMapAfterSaveAddress</h5>
+<p>После сохранения адрес можно записать наш новый адрес в заказ minishop</p>
+<pre><code class="language-php">&lt;?php
+
+// Event:LocateMapAfterSaveAddress
+// Комментарий: Заполняем форму для заказа miniShop2
+/** @var modX $modx */
+/* @var array $scriptProperties */
+/* @var \LocateMap\Address $address */
+
+/* @var miniShop2 $miniShop2 */
+$miniShop2 = $modx-&gt;getService(&#39;miniShop2&#39;);
+if ($miniShop2-&gt;loadServices()) {
+
+    if ($index = $address-&gt;get(&#39;postal_code&#39;)) {
+        $miniShop2-&gt;order-&gt;add(&#39;index&#39;, $index);
+    }
+
+    if ($region = $address-&gt;get(&#39;region&#39;)) {
+        $miniShop2-&gt;order-&gt;add(&#39;region&#39;, $region);
+    }
+
+    if ($city = $address-&gt;get(&#39;city&#39;)) {
+        $miniShop2-&gt;order-&gt;add(&#39;city&#39;, $city);
+    }
+
+    if ($house = $address-&gt;get(&#39;house&#39;)) {
+        $miniShop2-&gt;order-&gt;add(&#39;building&#39;, $house);
+    }
+
+    if ($street = $address-&gt;get(&#39;street&#39;)) {
+        $miniShop2-&gt;order-&gt;add(&#39;street&#39;, $street);
+    }
+}
+</code></pre>
+<h5 id="locatemapbeforegeocoder">LocateMapBeforeGeoCoder</h5>
+<p>Срабатывает <strong>перед</strong> получением адреса </p>
+<pre><code class="language-php">
+/* @var string $service  Гео кодер через который будет производиться поиск адреса*/
+/* @var string $lat  широта */
+/* @var string $lon  долгота */
+
+// Подменить геокодр по умолчанию на новый
+// В системе доступны 3 кодера Nominatim DaData Yandex
+$this-&gt;modx-&gt;event-&gt;returnedValues[&#39;service&#39;] = &#39;Yandex&#39;;
+</code></pre>
+<h5 id="locatemapaftergeocoder">LocateMapAfterGeoCoder</h5>
+<p>Срабатывает <strong>после</strong> получением адреса</p>
+<pre><code class="language-php">
+/* @var LocateMap\Address $address */
+
+// Получаем улицу
+$street = $address-&gt;street()
+
+// и записываем новое название
+$address-&gt;setName(&#39;Тут новое название &#39;.$street)
+
+// Пользователю вернется новое название, котором затем можно сохранить в сессию
+</code></pre>

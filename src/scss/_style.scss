@@ -1,0 +1,154 @@
+.content {
+  margin-left: 320px;
+  margin-bottom: 250px;
+}
+
+.bd-example {
+  margin: 20px 0;
+}
+
+.sidebar-content {
+  width: 260px;
+}
+
+.sidebar-content .nav-link {
+  font-size: 16px;
+}
+
+.elements-block {
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+  border-bottom: 5px solid #eee;
+}
+
+.elements-block > h1 {
+  font-size: 40px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+
+a, .nav-link {
+  color: #596782
+}
+
+.elem_logo img {
+  width: 150px;
+}
+
+.sidebar-fixed {
+  position: fixed;
+  height: 100%;
+  overflow: scroll;
+}
+
+.sidebar-content {
+  width: 260px;
+}
+
+
+.macbook_screen {
+  position: relative;
+}
+
+.macbook_screen_comp {
+  width: 953px;
+  height: 598px;
+  background: url("../images/pirctures/macbook.png");
+}
+
+.macbook_screen_bg {
+  width: 640px;
+  top: 80px;
+  max-height: 400px;
+  overflow: hidden;
+  left: 140px;
+  position: relative;
+}
+
+.macbook_screen_desktop {
+  position: relative;
+  width: 640px;
+}
+
+.screen {
+
+}
+
+.content-wrapper {
+  margin-top: 50px;
+}
+
+.functions_block {
+  margin: 10px 0;
+}
+
+.functions_block h5 {
+  margin-bottom: 0;
+  line-height: 20px;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.functions_text {
+  padding: 20px 0 10px 0;
+  font-style: italic;
+  font-size: 13px;
+  line-height: 16px;
+  color: #666;
+}
+
+.functions_img {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.functions_img img {
+  max-width: 300px;
+  max-height: 200px;
+  -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  margin-bottom: 10px;
+}
+
+
+.nav-link.active {
+  font-weight: bold;
+  color: #333;
+}
+
+h2 {
+  color: #162136;
+  display: block;
+}
+
+
+.elements-block ul {
+  margin-left: 20px;
+}
+
+.elements-block ol {
+  margin-left: 20px;
+}
+
+
+.menu_level_2 {
+  margin-left: 15px;
+  font-size: 12px
+}
+
+.menu_level_2 a.nav-link {
+  font-size: 14px
+}
+
+.menu_level_3 {
+  margin-left: 20px;
+  font-size: 12px
+}
+
+.menu_level_3 a.nav-link {
+  font-size: 12px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
