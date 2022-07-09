@@ -1,5 +1,5 @@
 #### Token Yandex
-![](../images/provider/yandex.png)
+![](images/provider/yandex.png)
 _Получение токена для Yandex необязательно_ 
 
 Токен нужен для использования [геокодера яндекс](https://yandex.ru/dev/maps/geocoder/) он лучше всех из 3-х кодеров определят точность адреса!

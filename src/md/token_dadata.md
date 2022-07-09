@@ -1,6 +1,6 @@
 #### Token DaData
 
-![](../images/provider/dadata.png)
+![](images/provider/dadata.png)
 
 _**Обязательно нужно получить токен**_
 
