@@ -1,7 +1,7 @@
 {
   "name": "locatemapdescription",
   "version": "1.0.0",
-  "description": "Пакет создания странички описания компонента",
+  "description": "Создания странички описания компонента",
   "main": "index.js",
   "scripts": {
     "build": "gulp build",
