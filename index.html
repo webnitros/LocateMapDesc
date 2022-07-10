@@ -25,14 +25,6 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link " href="#functions-desktop">Desktop</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link " href="#functions-mobile">Mobile</a>
-    </li>
-
-
-    <li class="nav-item">
         <a class="nav-link " href="#functions-faststart">Быстрый старт</a>
 
         <ul class="nav flex-column menu_level_2" >
@@ -49,6 +41,15 @@
 
     <li class="nav-item">
         <a class="nav-link " href="#functions-plugins">Плагины</a>
+    </li>
+
+
+    <li class="nav-item">
+        <a class="nav-link " href="#functions-snippet">Сниппеты и модификаторы</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link " href="#functions-selector">Селекторы</a>
     </li>
 
 
@@ -290,7 +291,7 @@
             <div class="elements-block" id="functions-token_dadata">
                 <div class="row">
                     <h4 id="token-dadata">Token DaData</h4>
-<p><img src="../images/provider/dadata.png" alt=""></p>
+<p><img src="images/provider/dadata.png" alt=""></p>
 <p><em><strong>Обязательно нужно получить токен</strong></em></p>
 <p>Токен для DaData имеет ограничения в <strong>10 000</strong> запросов в сутки.</p>
 <p>Получить токен можно в <a href="https://dadata.ru/profile/#info">личном кабинете</a></p>
@@ -303,7 +304,7 @@
             <div class="elements-block" id="functions-token_yandex">
                 <div class="row">
                     <h4 id="token-yandex">Token Yandex</h4>
-<p><img src="../images/provider/yandex.png" alt="">
+<p><img src="images/provider/yandex.png" alt="">
 <em>Получение токена для Yandex необязательно</em> </p>
 <p>Токен нужен для использования <a href="https://yandex.ru/dev/maps/geocoder/">геокодера яндекс</a> он лучше всех из 3-х кодеров определят точность адреса!
 Но при этом имеет ограничения в <strong>1000 запросов</strong> в сутки.</p>
@@ -319,13 +320,30 @@
 <p>Компоненте имеет по умолчанию 3 геокодера</p>
 <ul>
 <li><a href="https://nominatim.org">Nominatim</a> - бесплатный сервис</li>
-<li><a href="https://dadata.ru/api/suggest/address/">DaData</a> - условно бесплатный (ограничения до 10 000 запросов в сутки для одного токена)</li>
-<li><a href="https://yandex.ru/dev/maps/geocoder/">Yandex</a> - условно бесплатны (ограничения до 1 000 запрос в сутки для одного токен)</li>
+<li><a href="https://dadata.ru/api/suggest/address/">DaData</a> - условно бесплатный (ограничения в 10 000)</li>
+<li><a href="https://yandex.ru/dev/maps/geocoder/">Yandex</a> - условно бесплатны (ограничения в 1 000 запрос на один токен)</li>
+</ul>
+<h4 id="данные">Данные</h4>
+<p>С помощтю полученных гео координат с запросом в геокодер будут возвращать данные:</p>
+<ul>
+<li><strong>known</strong> — метка о удачном определении улицы и дома</li>
+<li><strong>kind</strong> — Содержит вид найденного топонима.</li>
+<li><strong>name</strong> — Название улицы, номер дома и корпус</li>
+<li><strong>description</strong> — Длинное название из сервиса геокодинга</li>
+<li><strong>country_code</strong> — Код страны в iso</li>
+<li><strong>region</strong> — Регион</li>
+<li><strong>area</strong> — Район</li>
+<li><strong>city</strong> — Город или населеный пункт</li>
+<li><strong>street</strong> — Название улицы</li>
+<li><strong>house</strong> — Номер дома</li>
+<li><strong>block</strong> — Корпус</li>
+<li><strong>postal_code</strong> — Аочтовый индекс</li>
+<li><strong>lat</strong> — Широта</li>
+<li><strong>lon</strong> — Долгота</li>
 </ul>
 
                 </div>
             </div>
-
 
             <div class="elements-block" id="functions-plugins">
                 <div class="row">
@@ -334,14 +352,81 @@
 <h5 id="locatemap">LocateMap</h5>
 <p>Основной плагин для регистрации скриптов</p>
 <h5 id="locatemapaddressminishop">locatemapAddressMiniShop</h5>
-<p>Плагин записывает адрес после сохранения.</p>
+<p>Плагин записывает адрес после сохранения и срабатывает на LocateMapAfterSaveAddress.</p>
 <p><em>Логику работы можно посмотреть на событии <a href="#locatemapaftersaveaddress">LocateMapAfterSaveAddress</a></em></p>
+<p>И после каждого отправления заказа заново вводит адрес в сессию срабатывая на событие minishop2 отчистка заказа <strong>msOnEmptyOrder</strong></p>
 
                 </div>
             </div>
 
+            <div class="elements-block" id="functions-snippet">
+                <div class="row">
+                    <h2 id="сниппеты">Сниппеты</h2>
+<p>Компонент поставляется только с одном сниппетом для вывода чанка</p>
+<pre><code class="language-html">[[!LocateMap]]
+{&#39;LocateMap&#39;|snippet : [
+    &#39;tpl&#39; =&gt; &#39;tpl.LocateMap.Outer&#39;
+]}
+</code></pre>
+<h2 id="чанки">Чанки</h2>
+<p><strong>tpl.LocateMap.Outer</strong> - выводит кнопку для запуска модельного окна с картой</p>
+<pre><code class="language-html">&lt;ul class=&quot;navbar-nav mr-auto  &quot;&gt;
+    &lt;li class=&quot;nav-item dropdown&quot;&gt;
+        &lt;a class=&quot;dropdown-item locatemap_my_address locatemapBtnModal &quot; href=&quot;#&quot;&gt;
+            &lt;svg width=&quot;11&quot; height=&quot;15&quot; viewBox=&quot;0 0 11 15&quot; fill=&quot;none&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+                &lt;path d=&quot;M5.20525 0C2.33504 0 0 2.33538 0 5.20567C0 7.96856 4.72282 14.4237 4.92391 14.697L5.11159 14.9524C5.13353 14.9824 5.16848 15 5.20525 15C5.24259 15 5.27731 14.9824 5.29949 14.9524L5.48705 14.697C5.68826 14.4237 10.411 7.96856 10.411 5.20567C10.411 2.33538 8.07554 0 5.20525 0ZM5.20525 3.34101C6.23366 3.34101 7.06991 4.1773 7.06991 5.20567C7.06991 6.2335 6.23362 7.07033 5.20525 7.07033C4.17745 7.07033 3.34059 6.2335 3.34059 5.20567C3.34059 4.1773 4.17742 3.34101 5.20525 3.34101Z&quot;
+                      fill=&quot;white&quot;/&gt;
+            &lt;/svg&gt;
+            &lt;span class=&quot;locatemap_my_address_text&quot; title=&quot;{$name}&quot;&gt;{if $known}{$name}{else}Укажите адрес доставки{/if}&lt;/span&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<h2 id="модификаторы">Модификаторы</h2>
+<p>Есть несколько модификаторов которые выводят из сессии данные</p>
+<h4 id="locatemaptoarray">locatemapToArray</h4>
+<pre><code class="language-html">{var $address = &#39;&#39;|locatemapToArray}
 
+&lt;!--
+$address = [
+    [known] =&gt; 1
+    [description] =&gt; село Кушалино, Рамешковский муниципальный округ, Тверская область, Россия
+    [name] =&gt; Строительная улица, 8
+    [house] =&gt; 8
+    [street] =&gt; Строительная улица
+    [block] =&gt;
+    [lat] =&gt; 57.12947125024
+    [lon] =&gt; 36.083227174439
+    [postal_code] =&gt;
+    [city] =&gt; село Кушалино
+    [region] =&gt; Тверская область
+    [area] =&gt;
+    [country_code] =&gt; ru
+    [kind] =&gt; house
+]
+--&gt;
+</code></pre>
+<h4 id="locatemap">locatemap</h4>
+<p>Возвращает отдельные поля</p>
+<pre><code class="language-html">{var $name = &#39;name&#39; | locatemap}
+&lt;!--
+$name =&quot;&quot;Строительная улица, 8
+--&gt;
+</code></pre>
 
+                </div>
+            </div>
+            <div class="elements-block" id="functions-selector">
+                <div class="row">
+                    <h1 id="селекторы">Селекторы</h1>
+<p>После некоторый действий срабатывают js события</p>
+<ul>
+<li><strong>.locatemapBtnModal</strong> - запускает модельное окно с картой</li>
+<li><strong>.locatemap_my_address_text</strong> - после выбора адреса сюда запишется <a href="#functions-geocoder">данные</a> из поля <strong>name</strong></li>
+</ul>
+
+                </div>
+            </div>
             <div id="functions-event"></div>
             <div class="elements-block" id="functions-event-js">
                 <div class="row">
@@ -464,12 +549,10 @@ $address-&gt;setName(&#39;Тут новое название &#39;.$street)
                 <h2>Купить</h2>
                 <p>Цена <b>4500</b> руб.</p>
                 <p>Продажа и поддержка компонента осуществляется через маркетплейс <b>modstore.pro</b></p>
-                <a class="btn btn-success" target="_blank" href="https://modstore.pro/packages/maps/locatemap">Перейти на маркетплейс</a>
+                <a class="btn btn-success" target="_blank" href="https://modstore.pro/packages/maps/locatemap">Перейти на маркетплейс >>></a>
             </div>
-
         </div>
     </div>
-
 
 </div>
 
