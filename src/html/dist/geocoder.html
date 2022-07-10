@@ -2,6 +2,24 @@
 <p>Компоненте имеет по умолчанию 3 геокодера</p>
 <ul>
 <li><a href="https://nominatim.org">Nominatim</a> - бесплатный сервис</li>
-<li><a href="https://dadata.ru/api/suggest/address/">DaData</a> - условно бесплатный (ограничения до 10 000 запросов в сутки для одного токена)</li>
-<li><a href="https://yandex.ru/dev/maps/geocoder/">Yandex</a> - условно бесплатны (ограничения до 1 000 запрос в сутки для одного токен)</li>
+<li><a href="https://dadata.ru/api/suggest/address/">DaData</a> - условно бесплатный (ограничения в 10 000)</li>
+<li><a href="https://yandex.ru/dev/maps/geocoder/">Yandex</a> - условно бесплатны (ограничения в 1 000 запрос на один токен)</li>
+</ul>
+<h4 id="данные">Данные</h4>
+<p>С помощтю полученных гео координат с запросом в геокодер будут возвращать данные:</p>
+<ul>
+<li><strong>known</strong> — метка о удачном определении улицы и дома</li>
+<li><strong>kind</strong> — Содержит вид найденного топонима.</li>
+<li><strong>name</strong> — Название улицы, номер дома и корпус</li>
+<li><strong>description</strong> — Длинное название из сервиса геокодинга</li>
+<li><strong>country_code</strong> — Код страны в iso</li>
+<li><strong>region</strong> — Регион</li>
+<li><strong>area</strong> — Район</li>
+<li><strong>city</strong> — Город или населеный пункт</li>
+<li><strong>street</strong> — Название улицы</li>
+<li><strong>house</strong> — Номер дома</li>
+<li><strong>block</strong> — Корпус</li>
+<li><strong>postal_code</strong> — Аочтовый индекс</li>
+<li><strong>lat</strong> — Широта</li>
+<li><strong>lon</strong> — Долгота</li>
 </ul>

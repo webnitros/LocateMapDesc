@@ -1,0 +1,52 @@
+<h2 id="сниппеты">Сниппеты</h2>
+<p>Компонент поставляется только с одном сниппетом для вывода чанка</p>
+<pre><code class="language-html">[[!LocateMap]]
+{&#39;LocateMap&#39;|snippet : [
+    &#39;tpl&#39; =&gt; &#39;tpl.LocateMap.Outer&#39;
+]}
+</code></pre>
+<h2 id="чанки">Чанки</h2>
+<p><strong>tpl.LocateMap.Outer</strong> - выводит кнопку для запуска модельного окна с картой</p>
+<pre><code class="language-html">&lt;ul class=&quot;navbar-nav mr-auto  &quot;&gt;
+    &lt;li class=&quot;nav-item dropdown&quot;&gt;
+        &lt;a class=&quot;dropdown-item locatemap_my_address locatemapBtnModal &quot; href=&quot;#&quot;&gt;
+            &lt;svg width=&quot;11&quot; height=&quot;15&quot; viewBox=&quot;0 0 11 15&quot; fill=&quot;none&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+                &lt;path d=&quot;M5.20525 0C2.33504 0 0 2.33538 0 5.20567C0 7.96856 4.72282 14.4237 4.92391 14.697L5.11159 14.9524C5.13353 14.9824 5.16848 15 5.20525 15C5.24259 15 5.27731 14.9824 5.29949 14.9524L5.48705 14.697C5.68826 14.4237 10.411 7.96856 10.411 5.20567C10.411 2.33538 8.07554 0 5.20525 0ZM5.20525 3.34101C6.23366 3.34101 7.06991 4.1773 7.06991 5.20567C7.06991 6.2335 6.23362 7.07033 5.20525 7.07033C4.17745 7.07033 3.34059 6.2335 3.34059 5.20567C3.34059 4.1773 4.17742 3.34101 5.20525 3.34101Z&quot;
+                      fill=&quot;white&quot;/&gt;
+            &lt;/svg&gt;
+            &lt;span class=&quot;locatemap_my_address_text&quot; title=&quot;{$name}&quot;&gt;{if $known}{$name}{else}Укажите адрес доставки{/if}&lt;/span&gt;
+        &lt;/a&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<h2 id="модификаторы">Модификаторы</h2>
+<p>Есть несколько модификаторов которые выводят из сессии данные</p>
+<h4 id="locatemaptoarray">locatemapToArray</h4>
+<pre><code class="language-html">{var $address = &#39;&#39;|locatemapToArray}
+
+&lt;!--
+$address = [
+    [known] =&gt; 1
+    [description] =&gt; село Кушалино, Рамешковский муниципальный округ, Тверская область, Россия
+    [name] =&gt; Строительная улица, 8
+    [house] =&gt; 8
+    [street] =&gt; Строительная улица
+    [block] =&gt;
+    [lat] =&gt; 57.12947125024
+    [lon] =&gt; 36.083227174439
+    [postal_code] =&gt;
+    [city] =&gt; село Кушалино
+    [region] =&gt; Тверская область
+    [area] =&gt;
+    [country_code] =&gt; ru
+    [kind] =&gt; house
+]
+--&gt;
+</code></pre>
+<h4 id="locatemap">locatemap</h4>
+<p>Возвращает отдельные поля</p>
+<pre><code class="language-html">{var $name = &#39;name&#39; | locatemap}
+&lt;!--
+$name =&quot;&quot;Строительная улица, 8
+--&gt;
+</code></pre>
